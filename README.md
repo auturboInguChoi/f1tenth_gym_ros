@@ -1,3 +1,39 @@
+# Ingu Choi Edit...
+## Especially Docker...
+In the ```docker-compose.yml``` file, I recommend editing the service:sim:volumes "- ~/sim_ws/src/f1tenth_gym_ros"
+
+
+```
+$ cd f1tenth_gym_ros
+$ docker build -t f1tenth_gym_ros -f Dockerfile .
+```
+
+If you want to run the docker image, command below line!!!
+```
+$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+```
+
+## RUN rviz & telekey using ROS2 foxy
+
+### Terminal 1
+```
+$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+$ source /opt/ros/foxy/setup.bash
+$ source install/local_setup.bash
+$ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+
+### Terminal 2
+```
+$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+$ source /opt/ros/foxy/setup.bash
+$ source install/local_setup.bash
+$ ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+
+# Original Readme...
+
 # F1TENTH gym environment ROS2 communication bridge
 This is a containerized ROS communication bridge for the F1TENTH gym environment that turns it into a simulation in ROS2.
 
