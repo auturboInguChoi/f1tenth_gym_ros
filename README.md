@@ -10,14 +10,15 @@ $ docker build -t f1tenth_gym_ros -f Dockerfile .
 
 If you want to run the docker image, command below line!!!
 ```
-$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+$ sudo rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
 ```
 
 ## RUN rviz & telekey using ROS2 foxy
 
 ### Terminal 1
 ```
-$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+$ cd ~/sim_ws
+$ sudo rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
 $ source /opt/ros/foxy/setup.bash
 $ source install/local_setup.bash
 $ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
@@ -25,7 +26,8 @@ $ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 
 ### Terminal 2
 ```
-$ rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
+$ cd ~/sim_ws
+$ sudo rocker --nvidia --x11 --volume ~/sim_ws/src/f1tenth_gym_ros -- f1tenth_gym_ros
 $ source /opt/ros/foxy/setup.bash
 $ source install/local_setup.bash
 $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
