@@ -33,6 +33,23 @@ $ source install/local_setup.bash
 $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+### Visual Studio Code
+```
+# Install
+$ wget https://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb
+$ sudo dpkg -i code.deb
+$ sudo apt-get install -f
+
+# Run
+$ sudo code --user-data-dir="~/.vscode-root" --no-sandbox
+```
+
+### Edit the bashrc
+```
+$ cd /sim_ws
+$ source /opt/ros/foxy/setup.bash
+$ source install/local_setup.bash
+```
 
 # Original Readme...
 
